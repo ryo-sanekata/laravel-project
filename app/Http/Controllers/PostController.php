@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+
 use App\Http\Requests\PostRequest; // useする
+use Illuminate\Http\Request;
+
 
 class PostController extends Controller
 {
@@ -27,5 +30,6 @@ class PostController extends Controller
         $input = $request['post'];
         $post->fill($input)->save();
         return redirect('/posts/' . $post->id);
-    }
+    } 
 }
+?>
